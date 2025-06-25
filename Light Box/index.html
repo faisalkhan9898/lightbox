@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light-box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="image-modal">
+        <span>&times;</span>
+        <img src="images/05-Contener-No-3rd-10.jpg" alt="">
+    </div>
+    <div class="main">
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-06.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-08.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-10.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-06.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-08.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-10.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-06.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-08.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-10.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-06.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-08.jpg" alt="">
+        </div>
+        <div class="items">
+            <img src="images/05-Contener-No-3rd-10.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+<script>
+    var overlay = document.querySelector(".overlay")
+    var imagemodal = document.querySelector(".image-modal")
+    var closebtn = document.querySelector(".image-modal span")
+    var img = document.querySelector(".image-modal img")
+
+    var main = document.querySelector(".main")
+
+    main.addEventListener("click", (event) => {
+
+        if (event.target.tagName == "IMG") {
+            overlay.classList.add('overlay-show')
+            imagemodal.classList.add('image-modal-show')
+            var currentpath=event.target.src
+            img.src=currentpath
+            
+        }
+
+
+    })
+
+    let closemodal = () => {
+        overlay.classList.remove('overlay-show')
+        imagemodal.classList.remove('image-modal-show')
+    }
+    closebtn.addEventListener("click", closemodal)
+    overlay.addEventListener("click", closemodal)
+
+</script>
+
+</html>
